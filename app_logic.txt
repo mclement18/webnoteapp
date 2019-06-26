@@ -11,7 +11,7 @@ when running:
 
         ii. adding option (box and button)
           in javascript
-            - upon "add" button click, save the note in localstorage
+            - upon "add" button click, save the note in webserver database
 
         iii. searching option (box and submit in form)
           in python (webserver)
@@ -22,7 +22,7 @@ when running:
             - link to notes page and diplay all notes
         
         v. clear user and all notes
-          - upon click, delete localstorage and refresh the page
+          - upon click, delete localstorage and database and refresh the page
   
   - notes page contains:
     - title
@@ -33,12 +33,12 @@ when running:
       - if see all (iv):
         - subtitle: all notes
         - list of all notes
-        - clear all button, upon click clear all notes from localstorage and not username
+        - clear all button, upon click clear all notes from database and not username
       
       - if searching notes (iii):
         - subtitle: your search (display search)
         - list of hits
-        - clear all button, upon click clear all hits from localstorage and not other notes or username
+        - clear all button, upon click clear all hits from database and not other notes or username
 
       
 
