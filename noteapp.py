@@ -83,9 +83,12 @@ def add():
     html_page = get_html("options")
     note_title = flask.request.form["title"].strip()
     note_content = flask.request.form["content"].strip()
-    note = "|".join([note_title, note_content])
-    write_db(note)
-    return html_page.replace("$$$INFO$$$", "Note saved!")
+    if not note_title and not note_content:
+        return html_page.replace("$$$INFO$$$", "Empty notes cannot be saved!")
+    else:
+        note = "|".join([note_title, note_content])
+        write_db(note)
+        return html_page.replace("$$$INFO$$$", "Note saved!")
 
 
 @app.route("/notes")
@@ -137,8 +140,10 @@ def search():
 @app.route("/delete", methods=["POST"])
 def delete():
     html_page = get_html("options")
-    notes_to_delete = flask.request.form["notes"].strip()
-    notes_to_delete_list = notes_to_delete.split("\n")
+    notes_to_delete = flask.request.form["notesToDelete"].strip()
+    print(notes_to_delete)
+    notes_to_delete_list = notes_to_delete.split("\r\n")
+    print(notes_to_delete_list)
     delete_notes_from_db(notes_to_delete_list)
     message = "Notes deleted."
     return html_page.replace("$$$INFO$$$", message)

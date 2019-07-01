@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Notes</title>
+  <script type="text/javascript" src="static/jquery-3.4.1.min.js"></script>
 </head>
 <a name="top"></a>
 <body>
@@ -14,7 +15,11 @@
   <footer>
     <a href="#top">To top of page</a>
     <p>To delete all visible notes, press "Delete notes".</p>
-    <input type="button" value="Delete notes" id="delete">
+    <form action="/delete" method="post">
+      <textarea name="notesToDelete" id="notesToDelete" hidden></textarea>
+      <input type="submit" value="Delete notes" id="delete">
+    </form>
   </footer>
+  <script type="text/javascript" src="static/deleteNotes.js"></script>
 </body>
 </html>
