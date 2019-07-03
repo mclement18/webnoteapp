@@ -1,0 +1,142 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: #318135;
+  padding: 15px;
+  text-align: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+form {
+  padding: 10px;
+}
+
+h2 {
+  padding: 8px;
+  margin: 10px;
+  color: #06508b;
+  font-style: italic;
+}
+
+p {
+  margin: auto auto;
+}
+
+input {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 100%;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #204222;
+  padding: 20px;
+  color: wheat;
+  display: flex;
+  justify-content: left;
+  margin: 10px 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px 0;
+  border-top: 3px dashed #184163;
+}
+
+.note-title{
+  margin: 5px;
+  padding: 5px;
+  background-color: #aeb1b3;
+}
+
+.note-content {
+  margin: 0 5px;
+  padding: 5px 15px;
+  border: 2px solid #1c262e;
+}
+
+.search {
+  padding: 3px;
+  margin: auto 10px auto 3px;
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+  padding: 3px;
+  margin: auto auto 0 auto;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border: 2px solid #1c262e;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.button:hover {
+  box-shadow: 3px 5px 5px gray;
+  transform: translate(-3px, -5px);
+}
+
+.button:active {
+  box-shadow: 0px 0px;
+  transform: translate(0px, 0px);
+}
+
+.footer-elements {
+  margin: auto 5px;
+}
+
+#username {
+  width: 150px;
+  margin: 10px auto;
+}
+
+#login {
+  background-color: #1c262e;
+}
+
+#back {
+  margin: 8px;
+  padding: 2px;
+}
+
+#add_note {
+  background-color: #26aa6c;
+}
+
+#search_note {
+  background-color: #328fce;
+}
+
+#see_all {
+  background-color: #7e5ad1;
+}
+
+#clear {
+  background-color: #da1d1d;
+}
+
+#delete {
+  background-color: #e2861c;
+}
+
+#back {
+  background-color: #2d4057;
+}

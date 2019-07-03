@@ -41,7 +41,7 @@ def get_notes():
 
 def write_note_html(note):
     note_title, note_content = note.split("|")
-    note_html = '  <div class="note">\n    <h3>{}</h3>\n    <p class="note_content">{}</p>\n  </div>\n'.format(note_title, note_content)
+    note_html = '  <div class="note">\n    <h3 class="note-title">{}</h3>\n    <p class="note-content">{}</p>\n  </div>\n'.format(note_title, note_content)
     return note_html
 
 def get_search_hits(query, notes, where):
@@ -49,9 +49,9 @@ def get_search_hits(query, notes, where):
     if query:
         for note in notes:
             title_note, content_note = note.split("|")
-            if where == "Title" and query in title_note:
+            if where == "Title" and query.upper() in title_note.upper():
                 hits.append(note)
-            elif where == "Content" and query in content_note:
+            elif where == "Content" and query.upper() in content_note.upper():
                 hits.append(note)
     subtitle = '  <div>\n    <h2>{} hits</h2>\n  </div>\n'.format(where)
     hits_html = ""
@@ -100,7 +100,7 @@ def notes():
     for note in notes:
         notes_html += write_note_html(note)
     if not notes_html:
-        notes_html = "<p>You have no note.</p>"
+        notes_html = "<div><p>You have no note.</p></div>"
     html_output = subtitle + notes_html
     return html_page.replace("$$$NOTES$$$", html_output)
 
@@ -110,17 +110,17 @@ def search():
     html_page = get_html("notes")
     query_title = flask.request.args.get("title")
     query_content = flask.request.args.get("content")
-    search = '<div id="search">\n    <h2>Your search:</h2>\ntitlecontent  </div>\n'
+    search = '<div>\n    <h2>Your search:</h2>\ntitlecontent  </div>\n'
     notes = get_notes()
     if query_title:
         title_hits = get_search_hits(query_title, notes, "Title")
-        search = search.replace("title", "    <h3>Title:</h3><p>{}</p>\n".format(query_title))
+        search = search.replace("title", '    <h3 class="search">Title:</h3><p class="search">{}</p>\n'.format(query_title))
     else:
         title_hits = ""
         search = search.replace("title", "")
     if query_content:
         content_hits = get_search_hits(query_content, notes, "Content")
-        search = search.replace("content", "    <h3>Content:</h3><p>{}</p>\n".format(query_content))
+        search = search.replace("content", '    <h3 class="search">Content:</h3><p class="search">{}</p>\n'.format(query_content))
     else:
         content_hits = ""
         search = search.replace("content", "")

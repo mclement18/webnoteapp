@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
@@ -15,22 +16,22 @@
     <form action="/add" method="post" class="options">
       <input type="text" name="title" id="add_note_title" placeholder="Note title">
       <input type="text" name="content" id="add_note_content" placeholder="Note content">
-      <input type="submit" value="Add note" id="add_note">
+      <input type="submit" value="Add note" class="button" id="add_note">
     </form>
     <form action="/search" method="get" class="options">
       <input type="text" name="title" id="search_note_title" placeholder="Note title">
       <input type="text" name="content" id="search_note_content" placeholder="Note content">
-      <input type="submit" value="Search note">
+      <input type="submit" value="Search note" class="button" id="search_note">
     </form>
     <div class="options">
-      <p><a href="/notes">See all notes</a></p>
+      <p><a href="/notes"> <button type="button" class="button" id="see_all">See all notes</button></a></p>
       <p>To delete user and clear notes database, press "Clear".</p>
-      <input type="button" value="Clear" id="clear">
+      <input type="button" value="Clear" class="button" id="clear">
     </div>
   </div>
   <footer>
-    <p>Info:</p>
-    <p>$$$INFO$$$</p>
+    <p class="footer-elements">Info:</p>
+    <p class="footer-elements">$$$INFO$$$</p>
   </footer>
   <script type="text/javascript" src="static/clear.js"></script>
 </body>

@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Notes</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
-<a name="top"></a>
 <body>
   <header>
     <h1>Your Notes</h1>
-    <a href="/options">Back to home</a>
   </header>
+  <a href="/options"><button type="button" class="button" id="back">Back to home</button></a>
   $$$NOTES$$$
+  <a href="#top" style="font-style: oblique">To top of page</a>
   <footer>
-    <a href="#top">To top of page</a>
-    <p>To delete all visible notes, press "Delete notes".</p>
-    <form action="/delete" method="post">
+    <p class="footer-elements">To delete all visible notes, press "Delete notes".</p>
+    <form action="/delete" method="post" class="footer-elements">
       <textarea name="notesToDelete" id="notesToDelete" hidden></textarea>
-      <input type="submit" value="Delete notes" id="delete">
+      <input type="submit" value="Delete notes" class="button" id="delete">
     </form>
   </footer>
   <script type="text/javascript" src="static/deleteNotes.js"></script>
